@@ -1,8 +1,8 @@
 # SciFi UI Project
 
-Name:
+Name: Killian Pogue
 
-Student Number: 
+Student Number: C17388633
 
 Fork this repository and use it a starter project for your assignment
 
