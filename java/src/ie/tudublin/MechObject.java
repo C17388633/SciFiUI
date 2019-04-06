@@ -93,6 +93,4 @@ public abstract class MechObject
         this.mech = mech;
     }
 
-    
-
 }

@@ -31,7 +31,6 @@ public class UI extends PApplet
         return keys[c] || keys [Character.toUpperCase(c)];
     }
     
-
     public void settings()
     {
         //size(800, 600);
@@ -43,7 +42,6 @@ public class UI extends PApplet
     {
         //b = new Button(this, 50, 50, 100, 50, "I am a button");
         //mc = new MovingCircle(this, width / 2, height / 2, 50);
-
 
         frame = new Frame(this, width / 2, height / 2);
         mechObjects.add(frame);
@@ -72,8 +70,7 @@ public class UI extends PApplet
             reticle.render();
             System.out.println("A key pressed");
         }
-        
-
+    
         if (checkKey(LEFT))
         {
             System.out.println("Left arrow key pressed");

@@ -1,6 +1,5 @@
 package ie.tudublin;
 
-
 public class Radar extends MechObject
 {
     UI mech;
@@ -11,12 +10,10 @@ public class Radar extends MechObject
     float diameter2 = 50;
     float theta = 0;
 
-
     public Radar(UI mech, float x, float y) 
     {
         super(mech, x, y, 0, 0);
     }
-
 
     public void render()
     {
@@ -32,7 +29,6 @@ public class Radar extends MechObject
         line(0, 0,0,-radius);
         */
 
-        /*
         float radius1 = diameter1 /2;
         float radius2 = diameter2 /2;
 
@@ -43,7 +39,6 @@ public class Radar extends MechObject
         float x2 = x + (float) Math.sin(theta) * radius1;
         float y2 = y - (float) Math.cos(theta) * radius2;
         mech.line(x, y, x2, y2);
-        */
     }
 
     float timeDelta = 1.0f/60.0f;
