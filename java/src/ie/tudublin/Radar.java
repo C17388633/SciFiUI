@@ -1,84 +1,56 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
-import processing.core.PVector;
 
-public class Radar
+public class Radar extends MechObject
 {
-    private float radius;
-    private PVector pos;
-    private float frequency;
-    private UI ui;
-    private float theta = 0;
+    UI mech;
+    float x;
+    float y;
+    float frequency = 1;
+    float diameter1 = 50;
+    float diameter2 = 50;
+    float theta = 0;
 
-    public Radar(UI ui, float frequency, float x, float y, float radius)
+
+    public Radar(UI mech, float x, float y) 
     {
-        this.ui = ui;
-        this.frequency = frequency;
-        pos = new PVector(x, y);
-        this.radius = radius;
+        super(mech, x, y, 0, 0);
     }
+
 
     public void render()
     {
-        ui.pushMatrix();        
+        mech.stroke(255);
+        mech.line(pos.x + 100, 0, pos.x + 100, 100);
+
+        /*
         ui.noFill();
-        ui.stroke(0, 200, 0);
-        ui.translate(pos.x, pos.y);
+        ui.stroke(0,200, 0);
+        ui.translation(pos.x, pos.y);
         ui.rotate(theta);
-        ui.ellipse(0, 0, radius * 2, radius * 2);
-        ui.line(0,0,0,-radius);
-        ui.popMatrix();
+        ui.ellipse(0, 0, diameter1, diameter1);
+        line(0, 0,0,-radius);
+        */
+
+        /*
+        float radius1 = diameter1 /2;
+        float radius2 = diameter2 /2;
+
+        
+        mech.noFill();
+        mech.stroke(0,200, 0);
+        mech.ellipse(x, y, diameter1, diameter2);
+        float x2 = x + (float) Math.sin(theta) * radius1;
+        float y2 = y - (float) Math.cos(theta) * radius2;
+        mech.line(x, y, x2, y2);
+        */
     }
 
-    float timeDelta = 1.0f / 60.0f;
+    float timeDelta = 1.0f/60.0f;
+    double TWO_PI = 6.2831855;
 
     public void update()
     {
-        theta += PApplet.TWO_PI * timeDelta * frequency;
+        theta += TWO_PI * timeDelta * frequency;
     }
-
-    /**
-     * @return the radius
-     */
-    public float getRadius() {
-        return radius;
-    }
-
-    /**
-     * @param radius the radius to set
-     */
-    public void setRadius(float radius) {
-        this.radius = radius;
-    }
-
-    /**
-     * @return the pos
-     */
-    public PVector getPos() {
-        return pos;
-    }
-
-    /**
-     * @param pos the pos to set
-     */
-    public void setPos(PVector pos) {
-        this.pos = pos;
-    }
-
-    /**
-     * @return the frequency
-     */
-    public float getFrequency() {
-        return frequency;
-    }
-
-    /**
-     * @param frequency the frequency to set
-     */
-    public void setFrequency(float frequency) {
-        this.frequency = frequency;
-    }
-
-    
 }

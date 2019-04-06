@@ -10,7 +10,7 @@ public abstract class MechObject
     protected float speed;
     protected UI mech;
 
-    public MechObject(UI mech, float x, float y, float rotation, float speed)//YASC yasc
+    public MechObject(UI mech, float x, float y, float rotation, float speed)
     {
         this.mech = mech;
         pos = new PVector(x, y);

@@ -6,9 +6,11 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-    Button b;
-    MovingCircle mc;
+	//Button b;
+    //MovingCircle mc;
     Frame frame;
+    Radar radar;
+    Reticle reticle;
 
     boolean[] keys = new boolean[1024];
 
@@ -43,25 +45,34 @@ public class UI extends PApplet
         //mc = new MovingCircle(this, width / 2, height / 2, 50);
 
 
-        /*ship = new Ship(this, width / 2, height / 2, 5, 50);
-        gameObjects.add(ship);
-        aiShip = new AIShip(this, 100, 100, 5, 50);
-        gameObjects.add(aiShip);
-        */
-
         frame = new Frame(this, width / 2, height / 2);
         mechObjects.add(frame);
+        radar = new Radar(this, width/6, height/6);
+        mechObjects.add(radar);
+        reticle = new Reticle(this);
+        mechObjects.add(reticle);
     }
 
     public void draw()
     {
-        background(0);
+        background(255);
         //b.render();
 
         //mc.update();
         //mc.render();
 
         frame.render();
+        //radar.update();
+        //radar.render();
+
+        //reticle.render();
+
+        if (checkKey('A'))
+        {
+            reticle.render();
+            System.out.println("A key pressed");
+        }
+        
 
         if (checkKey(LEFT))
         {
