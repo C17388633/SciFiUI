@@ -45,7 +45,7 @@ public class UI extends PApplet
 
         frame = new Frame(this, width / 2, height / 2);
         mechObjects.add(frame);
-        radar = new Radar(this, width/6, height/6);
+        radar = new Radar(this, frame.xAlign/2f, frame.yAlign);
         mechObjects.add(radar);
         reticle = new Reticle(this);
         mechObjects.add(reticle);
@@ -60,14 +60,15 @@ public class UI extends PApplet
         //mc.render();
 
         frame.render();
-        //radar.update();
-        //radar.render();
 
-        //reticle.render();
+        radar.update();
+        radar.render();
+
+        reticle.render();
 
         if (checkKey('A'))
         {
-            reticle.render();
+            //statusDisplay.render();
             System.out.println("A key pressed");
         }
     

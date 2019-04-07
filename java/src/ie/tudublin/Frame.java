@@ -2,8 +2,8 @@ package ie.tudublin;
 
 public class Frame extends MechObject
 {
-    private float xAlign = mech.width/5;
-    private float yAlign = mech.height/7; //75
+    public float xAlign = mech.width/5;
+    public float yAlign = mech.height/7; //75
 
     public Frame(UI mech, float x, float y)
     {
@@ -28,12 +28,16 @@ public class Frame extends MechObject
         mech.line(pos.x - xAlign, pos.y + yAlign, pos.x + xAlign, pos.y + yAlign);
 
         // Top two frame
-        mech.line(pos.x - xAlign, pos.y - yAlign, pos.x - xAlign*2, pos.y - xAlign*2);
+        mech.line(pos.x - xAlign, pos.y - yAlign, xAlign, yAlign*2);
         mech.line(pos.x + xAlign, pos.y - yAlign, pos.x + xAlign*2, pos.y - xAlign*2);
 
         // Bottom two frame
         mech.line(pos.x - xAlign, pos.y + yAlign, pos.x - xAlign*2, pos.y + xAlign*2);
         mech.line(pos.x + xAlign, pos.y + yAlign, pos.x + xAlign*2, pos.y + xAlign*2);
+
+        // Radar square
+        mech.line(xAlign, 0, xAlign, yAlign*2);
+        mech.line(0, yAlign*2, xAlign, yAlign*2);
     }
 
 }
