@@ -13,10 +13,11 @@ public class Reticle extends MechObject
 
     @Override
     public void render() {
-        mech.stroke(0);
+        mech.stroke(0,255,0);
         mech.ellipse(mech.mouseX, mech.mouseY, 10,10);
         mech.line(mech.mouseX - 10, mech.mouseY, mech.mouseX + 10, mech.mouseY);
         mech.line(mech.mouseX, mech.mouseY + 10, mech.mouseX, mech.mouseY - 10);
+        mech.noStroke();
     }
 
 }

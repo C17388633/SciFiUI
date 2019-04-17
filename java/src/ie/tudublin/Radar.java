@@ -3,8 +3,6 @@ package ie.tudublin;
 public class Radar extends MechObject
 {
     
-    
-
     public Radar(UI mech, float x, float y) 
     {
         super(mech, x, y, 0, 0);
@@ -17,8 +15,7 @@ public class Radar extends MechObject
 
     public void render()
     {
-        mech.stroke(255);
-        mech.line(pos.x + 100, 0, pos.x + 100, 100);
+        mech.stroke(200);
 
         /*
         ui.noFill();
