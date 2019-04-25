@@ -1,7 +1,6 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
-
 import processing.core.PApplet;
 
 public class UI extends PApplet
@@ -67,13 +66,14 @@ public class UI extends PApplet
         radar.update();
         radar.render();
 
-        
-
-        if (checkKey('A'))
-        {
-            System.out.println("A key pressed");
-            stats.render();
+        if (keyPressed) {
+            if (key == 'A' || key == 'a') 
+            {
+                System.out.println("A key pressed");
+                stats.render();
+            }
         }
+        stats.update();
 
         reticle.render();
     
