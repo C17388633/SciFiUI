@@ -5,7 +5,8 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-	//Button b;
+    Button b;
+    Button b2;
     //MovingCircle mc;
     Frame frame;
     Radar radar;
@@ -15,6 +16,7 @@ public class UI extends PApplet
     Enemy foe2;
     float foePresence1 = 1;
     float foePresence2 = 1;
+    float ThreeQ = 3 / 4;
     
 
     boolean[] keys = new boolean[1024];
@@ -45,7 +47,8 @@ public class UI extends PApplet
 
     public void setup()
     {
-        //b = new Button(this, 50, 50, 100, 50, "I am a button");
+        b = new Button(this, (width/2) - (width/5), height - (height/4), 100, 50, "Head Laser");
+        b2 = new Button(this, (width/2) + (width/5) - 100, height - (height/4), 100, 50, "Main Arm");
         //mc = new MovingCircle(this, width / 2, height / 2, 50);
 
         frame = new Frame(this, width / 2, height / 2);
@@ -66,8 +69,8 @@ public class UI extends PApplet
     {
         background(0);
 
-        
-        //b.render();
+        b.render();
+        b2.render();
 
         //mc.update();
         //mc.render();
@@ -96,8 +99,6 @@ public class UI extends PApplet
 
         foe1.checkCollisions();
         foe2.checkCollisions();
-        
-       
         
 
         if(mousePressed)

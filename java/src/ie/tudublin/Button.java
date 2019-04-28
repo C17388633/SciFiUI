@@ -4,16 +4,17 @@ import processing.core.PApplet;
 
 public class Button
 {
-    UI ui;
+    UI mech;
     private float x;
     private float y;
     private float width;
     private float height;
     private String text;
+    
 
-    public Button(UI ui, float x, float y, float width, float height, String text)
+    public Button(UI mech, float x, float y, float width, float height, String text)
     {
-        this.ui = ui;
+        this.mech = mech;
         this.x = x;
         this.y = y;
         this.width = width;
@@ -23,10 +24,17 @@ public class Button
 
     public void render()
     {
-        ui.noFill();
-        ui.stroke(255);
-        ui.rect(x, y, width, height);
-        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-        ui.text(text, x + width * 0.5f, y + height * 0.5f);
+        mech.noFill();
+        mech.stroke(255);
+        mech.rect(x, y, width, height);
+        mech.textAlign(PApplet.CENTER, PApplet.CENTER);
+        mech.fill(255);
+        mech.text(text, x + width * 0.5f, y + height * 0.5f);
+        mech.noFill();
+    }
+
+    public void update()
+    {
+
     }
 }

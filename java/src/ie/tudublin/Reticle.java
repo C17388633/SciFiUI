@@ -9,7 +9,7 @@ public class Reticle extends MechObject
         super(mech, 0, 0, 0, 0);
     }
     
-    boolean fired = false;
+    //boolean fired = false;
     
 
     @Override

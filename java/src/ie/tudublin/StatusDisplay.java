@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import static processing.core.PConstants.LEFT;
+import processing.core.PApplet;
 
 public class StatusDisplay extends MechObject {
     public StatusDisplay(UI mech, float x) {
@@ -24,7 +24,7 @@ public class StatusDisplay extends MechObject {
         mech.stroke(200);
         mech.rect(0, mech.height / 2, 20, (mech.height / 2) - 20);
         mech.fill(255);
-        mech.textAlign(LEFT);
+        mech.textAlign(PApplet.LEFT);
         float downwards = (mech.height/2) + spacing;
         
         mech.text("[A]", 5, mech.height/2 + 10);
