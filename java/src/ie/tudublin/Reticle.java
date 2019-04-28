@@ -28,11 +28,12 @@ public class Reticle extends MechObject
     public void mouseClicked()
     {
         PVector mouse = new PVector(mech.mouseX,mech.mouseY);
-        float dist = PVector.dist(mech.foe.getPos(), mouse);
+        float dist = PVector.dist(mech.foe.C, mouse);
         if (dist < mech.foe.diameter)
         {
             System.out.println("gone3");
             mech.mechObjects.remove(mech.foe);
+            mech.foePresence--;
         }
         mech.stroke(255, 0, 0);
         mech.line(mech.width, mech.height, mech.mouseX, mech.mouseY);

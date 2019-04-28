@@ -65,8 +65,12 @@ public class UI extends PApplet
 
         //mc.update();
         //mc.render();
-        foe.render();  
-        foe.update();
+        if(foePresence > 0 && foePresence < 3 )
+        {
+            foe.render();  
+            foe.update();
+        }
+        
 
         if(mousePressed)
         {
