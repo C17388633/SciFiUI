@@ -9,6 +9,7 @@ public class Reticle extends MechObject
         super(mech, 0, 0, 0, 0);
     }
     
+    int defeated =  0;
     //boolean fired = false;
     
 
@@ -36,6 +37,7 @@ public class Reticle extends MechObject
             mech.mechObjects.remove(mech.foe1);
             mech.foe1.C.x = mech.foe1.pos.x;
             mech.foePresence1--;
+            defeated++;
         }
         float dist2 = PVector.dist(mech.foe2.getPos(), mouse);
         if (dist2 < mech.foe2.diameter/2)
@@ -44,7 +46,10 @@ public class Reticle extends MechObject
             mech.mechObjects.remove(mech.foe2);
             mech.foe2.C.x = mech.foe2.pos.x;
             mech.foePresence2--;
+            defeated++;
         }
+
+
         if(mech.weaponChoice == 1)
         {
             mech.stroke(255,0, 0);
