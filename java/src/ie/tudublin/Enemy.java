@@ -18,34 +18,61 @@ public class Enemy extends MechObject
         C.x = C.x + (float) Math.sin(theta);
        
         C.y = C.y - (float) Math.cos(theta);
-        checkCollisions();
+        //checkCollisions();
+        checkOutOfBounds();
     }
 
     @Override
     public void render() {
         
         mech.stroke(150,0,150);
+        mech.strokeWeight(3);
         mech.ellipse(C.x, C.y, diameter, diameter);
         float x2 = C.x + (float) Math.sin(theta) * diameter;
         float y2 = C.y - (float) Math.cos(theta) * diameter;
         mech.line(C.x, C.y, x2, y2);
+        mech.strokeWeight(1);
     }
 
-    public void checkCollisions()
+    public void checkOutOfBounds()
     {
         if (C.x <= 0 || C.x >= mech.width)
         {
             mech.mechObjects.remove(this);
-            mech.foePresence1--;
+            if(this == mech.foe1)
+            {
+                mech.foePresence1--;
+            }
+            else
+            {
+                mech.foePresence2--;
+            }
             System.out.println("gone1");
-            C.x = mech.width/2;
+            C.x = pos.x;
         }
         else if(C.y <= 0 || C.y >= mech.height)
         {
             mech.mechObjects.remove(this);
-            mech.foePresence2--;
+            if(this == mech.foe1)
+            {
+                mech.foePresence1--;
+            }
+            else
+            {
+                mech.foePresence2--;
+            }
             System.out.println("gone2");
-            C.x = mech.height/2;
+            C.x = pos.y;
+        }
+    }
+
+    // Function for mech to lose HP if hit at certain places.
+    public void checkCollisions()
+    {
+        // head
+        if(C.y <= 30 && (C.x == mech.width/4 || C.x == mech.width*(3/4)))
+        {
+            mech.stats.headHP -= 10;
         }
     }
 

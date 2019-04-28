@@ -87,13 +87,15 @@ public class UI extends PApplet
         {
             foe2.render();  
             foe2.update();
-            
         }
         if(foePresence2 <= 0)
         {
             foe2 = new Enemy(this, width/2, height/2);
             foePresence2++;
         }
+
+        foe1.checkCollisions();
+        foe2.checkCollisions();
         
        
         

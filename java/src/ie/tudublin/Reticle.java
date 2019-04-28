@@ -10,6 +10,7 @@ public class Reticle extends MechObject
     }
     
     boolean fired = false;
+    
 
     @Override
     public void update() {
@@ -29,7 +30,7 @@ public class Reticle extends MechObject
     {
         PVector mouse = new PVector(mech.mouseX,mech.mouseY);
         float dist1 = PVector.dist(mech.foe1.getPos(), mouse);
-        if (dist1 < mech.foe1.diameter)
+        if (dist1 < mech.foe1.diameter/2)
         {
             System.out.println("gone3");
             mech.mechObjects.remove(mech.foe1);
@@ -37,7 +38,7 @@ public class Reticle extends MechObject
             mech.foePresence1--;
         }
         float dist2 = PVector.dist(mech.foe2.getPos(), mouse);
-        if (dist2 < mech.foe2.diameter)
+        if (dist2 < mech.foe2.diameter/2)
         {
             System.out.println("gone3");
             mech.mechObjects.remove(mech.foe2);

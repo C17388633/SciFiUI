@@ -44,6 +44,7 @@ public class Radar extends MechObject
         float mapX2 = mech.map( mech.foe2.pos.x, 0, mech.width, pos.x - diameter1, pos.x + diameter1);
         float mapY2 = mech.map( mech.foe2.pos.y, 0, mech.height, pos.y - diameter2, pos.y + diameter2);
         mech.line(mapX2, mapY2, mapX2, mapY2);
+        mech.strokeWeight(1);
     }
 
     float timeDelta = 1.0f/60.0f;

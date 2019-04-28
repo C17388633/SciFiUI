@@ -53,10 +53,17 @@ public class StatusDisplay extends MechObject {
         mech.line((pos.x/2) - 10, mech.height - (mech.height/4) - 100 , (pos.x/2) + 30, mech.height - (mech.height/4) - 100);
         mech.rect((pos.x/2) - 10, mech.height - (mech.height/4) - 120 , 40, 20, 5, 5, 0, 0);
         // Eyes
-        mech.fill(0,255,0);
+        if(headHP > 30)
+        {
+            mech.fill(0,255,0);
+        }
+        else
+        {
+            mech.fill(255,0,0);
+        }
         mech.noStroke();
         mech.triangle((pos.x/2) + 10, mech.height - (mech.height/4) - 110, (pos.x/2) - 5, mech.height - (mech.height/4) - 105, (pos.x/2) - 5, mech.height - (mech.height/4) - 115);
-        mech.fill(0,255,0);
+        
         mech.triangle((pos.x/2) + 10, mech.height - (mech.height/4) - 110, (pos.x/2) + 25, mech.height - (mech.height/4) - 105, (pos.x/2) + 25, mech.height - (mech.height/4) - 115);
         mech.noFill();
         // Head health
