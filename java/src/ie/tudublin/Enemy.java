@@ -36,14 +36,16 @@ public class Enemy extends MechObject
         if (C.x <= 0 || C.x >= mech.width)
         {
             mech.mechObjects.remove(this);
-            mech.foePresence--;
+            mech.foePresence1--;
             System.out.println("gone1");
+            C.x = mech.width/2;
         }
         else if(C.y <= 0 || C.y >= mech.height)
         {
             mech.mechObjects.remove(this);
-            mech.foePresence--;
+            mech.foePresence2--;
             System.out.println("gone2");
+            C.x = mech.height/2;
         }
     }
 

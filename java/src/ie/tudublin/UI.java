@@ -11,8 +11,11 @@ public class UI extends PApplet
     Radar radar;
     Reticle reticle;
     StatusDisplay stats;
-    Enemy foe;
-    float foePresence = 1;
+    Enemy foe1;
+    Enemy foe2;
+    float foePresence1 = 1;
+    float foePresence2 = 1;
+    
 
     boolean[] keys = new boolean[1024];
 
@@ -53,23 +56,46 @@ public class UI extends PApplet
         mechObjects.add(reticle);
         stats = new StatusDisplay(this, (width / 4));
         mechObjects.add(stats);
-        foe = new Enemy(this, width/2, height/2);
-        mechObjects.add(foe);
-
+        foe1 = new Enemy(this, width/2, height/2);
+        mechObjects.add(foe1);
+        foe2 = new Enemy(this, width/2, height/2);
+        mechObjects.add(foe2);
     }
 
     public void draw()
     {
         background(0);
+
+        
         //b.render();
 
         //mc.update();
         //mc.render();
-        if(foePresence > 0 && foePresence < 3 )
+        
+        if(foePresence1 > 0 && foePresence1 < 3 )
         {
-            foe.render();  
-            foe.update();
+            foe1.render();  
+            foe1.update();
+            
         }
+        if(foePresence1 <= 0)
+        {
+            foe1 = new Enemy(this, width/2, height/2);
+            foePresence1++;
+        }
+        if(foePresence2 > 0 && foePresence2 < 3 )
+        {
+            foe2.render();  
+            foe2.update();
+            
+        }
+        if(foePresence2 <= 0)
+        {
+            foe2 = new Enemy(this, width/2, height/2);
+            foePresence2++;
+        }
+        
+       
         
 
         if(mousePressed)
