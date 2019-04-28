@@ -45,8 +45,23 @@ public class Reticle extends MechObject
             mech.foe2.C.x = mech.foe2.pos.x;
             mech.foePresence2--;
         }
-        mech.stroke(255,0, 0);
-        mech.line(mech.width, mech.height, mech.mouseX, mech.mouseY);
+        if(mech.weaponChoice == 1)
+        {
+            mech.stroke(255,0, 0);
+            mech.line(0, mech.height, mech.mouseX, mech.mouseY);
+        }
+        else if(mech.weaponChoice == 2)
+        {
+            mech.stroke(255,0, 0);
+            mech.line(mech.width/4, 0, mech.mouseX, mech.mouseY);
+            mech.line((mech.width/4) * 3, 0, mech.mouseX, mech.mouseY);
+        }
+        else
+        {
+            mech.stroke(255,0, 0);
+            mech.line(mech.width, mech.height, mech.mouseX, mech.mouseY);
+        }
+        
     }
 
 }

@@ -1,12 +1,14 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
+
 import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-    Button b;
+    Button b1;
     Button b2;
+    Button b3;
     //MovingCircle mc;
     Frame frame;
     Radar radar;
@@ -16,7 +18,7 @@ public class UI extends PApplet
     Enemy foe2;
     float foePresence1 = 1;
     float foePresence2 = 1;
-    float ThreeQ = 3 / 4;
+    int weaponChoice = 3;
     
 
     boolean[] keys = new boolean[1024];
@@ -47,8 +49,9 @@ public class UI extends PApplet
 
     public void setup()
     {
-        b = new Button(this, (width/2) - (width/5), height - (height/4), 100, 50, "Head Laser");
-        b2 = new Button(this, (width/2) + (width/5) - 100, height - (height/4), 100, 50, "Main Arm");
+        b1 = new Button(this, (width/2) - (width/5), height - (height/4), 100, 50, "Left Arm");
+        b2 = new Button(this, (width/2) - 50, height - (height/4), 100, 50, "Head Laser");
+        b3 = new Button(this, (width/2) + (width/5) - 100, height - (height/4), 100, 50, "Right Arm");
         //mc = new MovingCircle(this, width / 2, height / 2, 50);
 
         frame = new Frame(this, width / 2, height / 2);
@@ -69,9 +72,6 @@ public class UI extends PApplet
     {
         background(0);
 
-        b.render();
-        b2.render();
-
         //mc.update();
         //mc.render();
         
@@ -79,7 +79,6 @@ public class UI extends PApplet
         {
             foe1.render();  
             foe1.update();
-            
         }
         if(foePresence1 <= 0)
         {
@@ -99,6 +98,26 @@ public class UI extends PApplet
 
         foe1.checkCollisions();
         foe2.checkCollisions();
+
+
+        if(weaponChoice == 1)
+        {
+            b1.active();
+            b2.nonActive();
+            b3.nonActive();
+        }
+        else if(weaponChoice == 2)
+        {
+            b1.nonActive();
+            b2.active();
+            b3.nonActive();
+        }
+        else
+        {
+            b1.nonActive();
+            b2.nonActive();
+            b3.active();
+        }
         
 
         if(mousePressed)

@@ -39,6 +39,7 @@ public class StatusDisplay extends MechObject {
     @Override
     public void render()
     {
+        mech.textAlign(PApplet.LEFT);
         mech.fill(0);
         mech.stroke(200);
         mech.rect(20, mech.height /2 , pos.x, (mech.height / 2) -20);
