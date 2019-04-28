@@ -11,6 +11,8 @@ public class UI extends PApplet
     Radar radar;
     Reticle reticle;
     StatusDisplay stats;
+    Enemy foe;
+    float foePresence = 1;
 
     boolean[] keys = new boolean[1024];
 
@@ -51,6 +53,9 @@ public class UI extends PApplet
         mechObjects.add(reticle);
         stats = new StatusDisplay(this, (width / 4));
         mechObjects.add(stats);
+        foe = new Enemy(this, width/2, height/2);
+        mechObjects.add(foe);
+
     }
 
     public void draw()
@@ -60,6 +65,13 @@ public class UI extends PApplet
 
         //mc.update();
         //mc.render();
+        foe.render();  
+        foe.update();
+
+        if(mousePressed)
+        {
+            reticle.mouseClicked();
+        }
 
         frame.render();
 
@@ -74,7 +86,8 @@ public class UI extends PApplet
             }
         }
         stats.update();
-
+        
+        
         reticle.render();
     
         if (checkKey(LEFT))

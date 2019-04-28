@@ -28,7 +28,6 @@ public class Radar extends MechObject
 
         float radius1 = diameter1 /2;
         float radius2 = diameter2 /2;
-
         
         mech.noFill();
         mech.stroke(0,200, 0);
@@ -36,6 +35,12 @@ public class Radar extends MechObject
         float x2 = pos.x + (float) Math.sin(theta) * radius1;
         float y2 = pos.y - (float) Math.cos(theta) * radius2;
         mech.line(pos.x, pos.y, x2, y2);
+
+        mech.stroke(255,140,0);
+        mech.strokeWeight(3);
+        float mapX = mech.map( mech.foe.pos.x, 0, mech.width, pos.x - diameter1, pos.x + diameter1);
+        float mapY = mech.map( mech.foe.pos.y, 0, mech.height, pos.y - diameter2, pos.y + diameter2);
+        mech.line(mapX, mapY, mapX, mapY);
     }
 
     float timeDelta = 1.0f/60.0f;
