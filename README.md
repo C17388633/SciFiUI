@@ -73,9 +73,7 @@ Video as Image:
 
 [![YouTube](http://img.youtube.com/vi/DtcmCrGlv5U/0.jpg)](https://www.youtube.com/watch?v=DtcmCrGlv5U)
 
-Video as hyperlink:
-
-[hyperlink] (https://www.youtube.com/watch?v=DtcmCrGlv5U)
+Video as hyperlink: [Video] (https://www.youtube.com/watch?v=DtcmCrGlv5U)
 
 # Markdown Tutorial
 
