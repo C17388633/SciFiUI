@@ -10,7 +10,6 @@ public class UI extends PApplet
     Button b2;
     Button b3;
     Button scoreboard;
-    //MovingCircle mc;
     Frame frame;
     Radar radar;
     Reticle reticle;
@@ -50,11 +49,12 @@ public class UI extends PApplet
 
     public void setup()
     {
+        // buttons
         b1 = new Button(this, (width/2) - (width/5), height - (height/4), 100, 50, "Left Arm");
         b2 = new Button(this, (width/2) - 50, height - (height/4), 100, 50, "Head Laser");
         b3 = new Button(this, (width/2) + (width/5) - 100, height - (height/4), 100, 50, "Right Arm");
+        // Score Display
         scoreboard = new Button(this, width/2 - 100, height - (height/6), 200, 50, "Enemies Defeated: ");
-        //mc = new MovingCircle(this, width / 2, height / 2, 50);
 
         frame = new Frame(this, width / 2, height / 2);
         mechObjects.add(frame);
@@ -73,9 +73,8 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        //mc.update();
-        //mc.render();
         
+        // If there is a foe presence.
         if(foePresence1 > 0 && foePresence1 < 3 )
         {
             foe1.render();  
@@ -97,9 +96,7 @@ public class UI extends PApplet
             foePresence2++;
         }
 
-        foe1.checkCollisions();
-        foe2.checkCollisions();
-
+        // If this weapon has being chosen call the active() method.
         if(weaponChoice == 1)
         {
             b1.active();
@@ -120,19 +117,18 @@ public class UI extends PApplet
         }
         scoreboard.show();
         
-
-        if(mousePressed)
-        {
-            reticle.mouseClicked();
-        }
-
         frame.render();
 
         radar.update();
         radar.render();
 
+        if(mousePressed)
+        {
+            reticle.mouseClicked();
+        }
         reticle.render();
 
+        // If 'a' is pressed show the stats
         if (keyPressed) {
             if (key == 'A' || key == 'a') 
             {
@@ -141,11 +137,5 @@ public class UI extends PApplet
             }
         }
         stats.update();
-        
-        if (checkKey(LEFT))
-        {
-            System.out.println("Left arrow key pressed");
-        }
     }
 }
-

@@ -21,6 +21,7 @@ public class Button
         this.text = text;
     }
 
+    // When this weapons is not being used.
     public void nonActive()
     {
         mech.noFill();
@@ -36,6 +37,7 @@ public class Button
         }
     }
 
+    // When this weapons is being used.
     public void active()
     {
         mech.fill(255);
@@ -71,6 +73,7 @@ public class Button
         }
     }
 
+    // Method for the Score Display
     public void show()
     {
         mech.noFill();
