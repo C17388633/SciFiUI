@@ -4,9 +4,23 @@ Name: Killian Pogue
 
 Student Number: C17388633
 
-Fork this repository and use it a starter project for your assignment
-
 # Description of the assignment
+The objective of this assignmment was to make a
+UI that had a Science Fiction setting. I decided
+to base my UI off being in a cockpit of a mech
+aka a giant pilotable giant robot.
+
+The view that the user has is from inside the mech.
+The user has to prevent the mech from losing HP
+from the enemies as they try to get to the edge
+of the screen.
+
+The user does this by using one of the 3 available
+weapons to shot the enemy.
+
+There is also a radar to show a smaller view of where
+the enemies are and also a Status Diplay to show the
+user how much HP the mech has left.
 
 # Instructions
 
