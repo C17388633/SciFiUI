@@ -23,6 +23,24 @@ the enemies are and also a Status Diplay to show the
 user how much HP the mech has left.
 
 # Instructions
+The main controls for the assignment are:
+
+- The mouse
+
+For aiming the reticle and when the user clicks the
+mouse it will shoot a laser towards the center of the
+reticle to shot the enemy.
+
+It is also used to click on buttons which are
+located at the bottom of the screen to select a weapon.
+The weapon determines where the laser will come from and
+ then join to where the mouse is pointing to at that current moment
+
+- The 'a' key
+
+While the user holds down the A key they are able to
+see the status of the mech. 
+ 
 
 # How it works
 
