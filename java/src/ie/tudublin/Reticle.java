@@ -9,9 +9,8 @@ public class Reticle extends MechObject
         super(mech, 0, 0, 0, 0);
     }
     
+    // Counter for the amount of Enemies defeated
     int defeated =  0;
-    //boolean fired = false;
-    
 
     @Override
     public void update() {
@@ -30,6 +29,7 @@ public class Reticle extends MechObject
 
     public void mouseClicked()
     {
+        // Checking the distance between the mouse and enemy.
         PVector mouse = new PVector(mech.mouseX,mech.mouseY);
         float dist1 = PVector.dist(mech.foe1.getPos(), mouse);
         if (dist1 < mech.foe1.diameter/2)
@@ -50,7 +50,7 @@ public class Reticle extends MechObject
             defeated++;
         }
 
-
+        // Decides where the laser is pointing from.
         if(mech.weaponChoice == 1)
         {
             mech.stroke(255,0, 0);

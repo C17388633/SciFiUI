@@ -15,17 +15,6 @@ public class Radar extends MechObject
 
     public void render()
     {
-        mech.stroke(200);
-
-        /*
-        ui.noFill();
-        ui.stroke(0,200, 0);
-        ui.translation(pos.x, pos.y);
-        ui.rotate(theta);
-        ui.ellipse(0, 0, diameter1, diameter1);
-        line(0, 0,0,-radius);
-        */
-
         float radius1 = diameter1 /2;
         float radius2 = diameter2 /2;
         
@@ -36,6 +25,7 @@ public class Radar extends MechObject
         float y2 = pos.y - (float) Math.cos(theta) * radius2;
         mech.line(pos.x, pos.y, x2, y2);
 
+        // Orange dots which show the location of the enemies on the radar.
         mech.stroke(255,140,0);
         mech.strokeWeight(3);
         float mapX1 = mech.map( mech.foe1.pos.x, 0, mech.width, pos.x - diameter1, pos.x + diameter1);

@@ -35,6 +35,7 @@ public class Enemy extends MechObject
 
     public void checkOutOfBounds()
     {
+        // if hits the left or the right side of the screen go back to the middle.
         if (C.x <= 0 || C.x >= mech.width)
         {
             mech.mechObjects.remove(this);
@@ -49,6 +50,7 @@ public class Enemy extends MechObject
             System.out.println("gone1");
             C.x = pos.x;
         }
+        // if hits the top or the bottom of the screen go back to the middle.
         else if(C.y <= 0 || C.y >= mech.height)
         {
             mech.mechObjects.remove(this);
@@ -73,12 +75,11 @@ public class Enemy extends MechObject
         {
             mech.stats.headHP -= 10;
             mech.fill(255);
-           // mech.text("Head hit",);
+            //mech.text("Warning Head Unit has received Damage",0, mech.height/2);
             System.out.println(" Head Hit");
             mech.noFill();
         }
         // Right Arm
-        
         if((C.y < mech.height/2 && C.x >= mech.width) || (C.y <=0 && C.x >= mech.width*(3/4)))
         {
             mech.stats.arm2HP -= 10;
