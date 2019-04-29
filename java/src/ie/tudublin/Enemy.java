@@ -16,9 +16,8 @@ public class Enemy extends MechObject
     @Override
     public void update() {
         C.x = C.x + (float) Math.sin(theta);
-       
         C.y = C.y - (float) Math.cos(theta);
-        //checkCollisions();
+        checkCollisions();
         checkOutOfBounds();
     }
 
@@ -70,9 +69,44 @@ public class Enemy extends MechObject
     public void checkCollisions()
     {
         // head
-        if(C.y <= 30 && (C.x == mech.width/4 || C.x == mech.width*(3/4)))
+        if((C.y <= 0 && C.x >= mech.width/4) || (C.y <= 0 && C.x <= mech.width*(3/4)))
         {
             mech.stats.headHP -= 10;
+            mech.fill(255);
+           // mech.text("Head hit",);
+            System.out.println(" Head Hit");
+            mech.noFill();
+        }
+        // Right Arm
+        
+        if((C.y < mech.height/2 && C.x >= mech.width) || (C.y <=0 && C.x >= mech.width*(3/4)))
+        {
+            mech.stats.arm2HP -= 10;
+            System.out.println(" Right Arm Hit");
+        }
+        // Left Arm
+        if((C.y < mech.height/2 && C.x <= 0) || (C.y <=0 && C.x >= mech.width/4))
+        {
+            mech.stats.arm1HP -= 10;
+            System.out.println(" Left Arm Hit");
+        }
+        // Torso
+        if((C.y >= mech.height && C.x >= mech.width/4) || (C.y >= mech.height && C.x <= mech.width*(3/4)))
+        {
+            mech.stats.mainHP -= 10;
+            System.out.println(" Main Body Hit");
+        }
+        // Right Leg
+        if((C.y >= mech.height/2 && C.x >= mech.width) || (C.y >= mech.height && C.x >= mech.width*(3/4)))
+        {
+            mech.stats.leg1HP -= 10;
+            System.out.println(" Right Leg Hit");
+        }
+        // Left Leg
+        if((C.y >= mech.height/2 && C.x <= 0) || (C.y >= mech.height && C.x <= mech.width/4))
+        {
+            mech.stats.leg2HP -= 10;
+            System.out.println(" Left Leg Hit");
         }
     }
 

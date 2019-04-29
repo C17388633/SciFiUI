@@ -73,7 +73,6 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-
         //mc.update();
         //mc.render();
         
@@ -100,7 +99,6 @@ public class UI extends PApplet
 
         foe1.checkCollisions();
         foe2.checkCollisions();
-
 
         if(weaponChoice == 1)
         {
@@ -133,6 +131,8 @@ public class UI extends PApplet
         radar.update();
         radar.render();
 
+        reticle.render();
+
         if (keyPressed) {
             if (key == 'A' || key == 'a') 
             {
@@ -142,9 +142,6 @@ public class UI extends PApplet
         }
         stats.update();
         
-        
-        reticle.render();
-    
         if (checkKey(LEFT))
         {
             System.out.println("Left arrow key pressed");

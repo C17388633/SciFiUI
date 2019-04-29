@@ -20,6 +20,7 @@ public class Reticle extends MechObject
     @Override
     public void render() {
         mech.stroke(0,255,0);
+        mech.noFill();
         mech.ellipse(mech.mouseX, mech.mouseY, 20,20);
         mech.line(mech.mouseX - 20, mech.mouseY, mech.mouseX + 20, mech.mouseY);
         mech.line(mech.mouseX, mech.mouseY + 20, mech.mouseX, mech.mouseY - 20);

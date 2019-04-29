@@ -77,10 +77,25 @@ public class StatusDisplay extends MechObject {
         mech.text(headHP + "%", (pos.x/2) + 45, mech.height - (mech.height/4) + - 128);
         mech.noFill();
         // Shoulders
-        mech.stroke(255);
+        if(mainHP > 30)
+        {
+            mech.stroke(255);
+        }
+        else
+        {
+            mech.stroke(255,0,0);
+        }
         mech.rect((pos.x/2) - 30, mech.height - (mech.height/4) - 70, 80, 30, 5, 5, 5, 5);
         mech.rect((pos.x/2) - 20, mech.height - (mech.height/4) - 60, 60, 10, 5, 5, 5, 5);
         // Arm 1
+        if(arm1HP > 30)
+        {
+            mech.stroke(255);
+        }
+        else
+        {
+            mech.stroke(255,0,0);
+        }
         mech.rect((pos.x/2) + 50, mech.height - (mech.height/4) - 60, 10, 10);
         mech.line((pos.x/2) + 60, mech.height - (mech.height/4) - 55, (pos.x/2) + 75, mech.height - (mech.height/4) - 40);
         mech.ellipse((pos.x/2) + 80, mech.height - (mech.height/4) - 10, 10, 10);
@@ -97,7 +112,14 @@ public class StatusDisplay extends MechObject {
         mech.text(arm1HP + "%", (pos.x/2) + 100, mech.height - (mech.height/4) + 7);
         mech.noFill();
         // Arm 2
-        mech.stroke(255);
+        if(arm2HP > 30)
+        {
+            mech.stroke(255);
+        }
+        else
+        {
+            mech.stroke(255,0,0);
+        }
         mech.rect((pos.x/2) - 40, mech.height - (mech.height/4) - 60, 10, 10);
         mech.line((pos.x/2) - 40, mech.height - (mech.height/4) - 55, (pos.x/2) - 55, mech.height - (mech.height/4) - 40);
         mech.ellipse((pos.x/2) - 60, mech.height - (mech.height/4) - 10, 10, 10);
@@ -114,7 +136,14 @@ public class StatusDisplay extends MechObject {
         mech.text(arm2HP + "%", (pos.x/2) - 125, mech.height - (mech.height/4) + 7);
         mech.noFill();
         // Neck
-        mech.stroke(255);
+        if(mainHP > 30)
+        {
+            mech.stroke(255);
+        }
+        else
+        {
+            mech.stroke(255,0,0);
+        }
         mech.line((pos.x/2) + 10, mech.height - (mech.height/4) - 70, (pos.x/2) + 10, mech.height - (mech.height/4) - 90);
         // Torso health
         mech.stroke(100);
@@ -132,6 +161,14 @@ public class StatusDisplay extends MechObject {
         mech.line((pos.x/2) - 15, mech.height - (mech.height/4) - 40 , (pos.x/2) + 5, mech.height - (mech.height/4) -10);
         mech.line((pos.x/2) + 35, mech.height - (mech.height/4) - 40 , (pos.x/2) + 15, mech.height - (mech.height/4) -10);
         // Leg 1
+        if(leg1HP > 30)
+        {
+            mech.stroke(255);
+        }
+        else
+        {
+            mech.stroke(255,0,0);
+        }
         mech.rect((pos.x/2) - 30, mech.height - (mech.height/4) + 10, 20, 40, 0, 0, 5, 5);
         mech.rect((pos.x/2) - 25, mech.height - (mech.height/4) + 50, 10, 3);
         mech.rect((pos.x/2) - 32, mech.height - (mech.height/4) + 53, 24, 20, 5, 5, 5, 5);
@@ -149,6 +186,14 @@ public class StatusDisplay extends MechObject {
         mech.text(leg1HP + "%", (pos.x/2) - 95, mech.height - (mech.height/4) + 85);
         mech.noFill();
         // Leg 2
+        if(leg2HP > 30)
+        {
+            mech.stroke(255);
+        }
+        else
+        {
+            mech.stroke(255,0,0);
+        }
         mech.stroke(255);
         mech.rect((pos.x/2) + 30, mech.height - (mech.height/4) + 10, 20, 40, 0, 0, 5, 5);
         mech.rect((pos.x/2) + 35, mech.height - (mech.height/4) + 50, 10, 3);

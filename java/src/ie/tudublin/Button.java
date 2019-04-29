@@ -10,7 +10,6 @@ public class Button
     private float width;
     private float height;
     private String text;
-    
 
     public Button(UI mech, float x, float y, float width, float height, String text)
     {
