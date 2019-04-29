@@ -22,6 +22,8 @@ There is also a radar to show a smaller view of where
 the enemies are and also a Status Diplay to show the
 user how much HP the mech has left.
 
+
+
 # Instructions
 The main controls for the assignment are:
 
@@ -53,7 +55,7 @@ methods.
 Except the button class, the other classes in this assignment will
 be sub classes of the mechobject class. When a subclass has been created
 it will be added to an Array List called 'mechObjects'. This allows the 
-assignment to use polymorphism to aallow each object in the class to
+assignment to use polymorphism to allow each object in the class to
 render on screen for the user to see.
 
 # What I am most proud of in the assignment
@@ -62,12 +64,18 @@ The things that I'm most proud of in my assignment are:
 1. Being able to acheive something which i have been dreaming to do
 which is create a UI for a pilot of a mech or someone in a power suit.
 1. That I reduced the amount of times I have 'hard coded' on my assignment
-compared to previous OOP labs and other projects. This help me realise that
+compared to previous OOP labs and other projects. This helped me realise that
 not all devices have the same screen size and that is something which I
 will need to consider more often as I go through this course. 
-1. 
 
 # Youtube Video.
+Video as Image:
+
+[![YouTube](http://img.youtube.com/vi/DtcmCrGlv5U/0.jpg)](https://www.youtube.com/watch?v=DtcmCrGlv5U)
+
+Video as hyperlink:
+
+[hyperlink] https://www.youtube.com/watch?v=DtcmCrGlv5U ##Video
 
 # Markdown Tutorial
 

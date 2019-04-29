@@ -98,7 +98,7 @@ public class Enemy extends MechObject
             System.out.println(" Main Body Hit");
         }
         // Right Leg
-        if((C.y >= mech.height/2 && C.x >= mech.width) || (C.y >= mech.height && C.x >= mech.width*(3/4)))
+        if((C.y >= mech.height/2 && C.x <= mech.width) || (C.y >= mech.height && C.x >= mech.width*(3/4)))
         {
             mech.stats.leg1HP -= 10;
             System.out.println(" Right Leg Hit");
